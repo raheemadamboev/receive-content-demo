@@ -34,6 +34,9 @@ android {
 
     kotlinOptions {
         jvmTarget = libs.versions.java.target.get()
+        freeCompilerArgs += listOf(
+            "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi"
+        )
     }
 
     buildFeatures {
@@ -54,7 +57,6 @@ android {
 dependencies {
 
     // compose
-    implementation(platform(libs.compose))
     implementation(libs.compose.ui)
     implementation(libs.compose.graphics)
     implementation(libs.compose.preview)
@@ -68,4 +70,8 @@ dependencies {
 
     // core
     implementation(libs.core)
+
+    // coil
+    implementation(libs.coil)
+    implementation(libs.coil.gif)
 }
